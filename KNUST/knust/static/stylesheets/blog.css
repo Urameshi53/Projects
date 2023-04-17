@@ -1,0 +1,10 @@
+html {
+    font-family: sans-serif;
+    background: #eee;
+  }
+
+.box1 {
+    margin: 0 auto;
+    padding: 3rem;
+    max-width: 1024px;
+}

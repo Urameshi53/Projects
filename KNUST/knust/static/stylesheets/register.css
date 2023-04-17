@@ -1,0 +1,51 @@
+.form-register {
+    width: 70%;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+#register {
+    padding: 2rem;
+    background: url("xavier.jpg") top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+#form {
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin: 0 20rem;
+    padding: 2rem 0;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 0 25px rgb(0 0 0 / 5%)
+}
+
+
+#form-rest {
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+h6 {
+    color: black;
+}
+
+h6:hover {
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    #form {
+        margin: 0 auto;
+    }
+    .form-register {
+        width: 100%;
+        padding: 1rem;
+    }
+}
