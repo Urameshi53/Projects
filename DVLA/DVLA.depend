@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1680790755 source:c:\users\user\documents\c++\dvla\src\proxy.cpp
+	"Proxy.h"
+	<fstream>
+	<iostream>
+	<string.h>
+	<cstdlib>
+	<time.h>
+
+1680785764 c:\users\user\documents\c++\dvla\include\proxy.h
+	<fstream>
+	"License.h"
+	"Vehicle.h"
+
+1680783688 source:c:\users\user\documents\c++\dvla\main.cpp
+	<iostream>
+	"Proxy.h"
+	<fstream>
+	<string.h>
+	<cstdlib>
+	<time.h>
+
+1680441779 source:c:\users\user\documents\c++\dvla\src\license.cpp
+	"License.h"
+
+1680615403 c:\users\user\documents\c++\dvla\include\license.h
+	<iostream>
+
+1680635260 c:\users\user\documents\c++\dvla\include\vehicle.h
+	<iostream>
+
+1680610190 source:c:\users\user\documents\c++\dvla\src\vehicle.cpp
+	"Vehicle.h"
+
