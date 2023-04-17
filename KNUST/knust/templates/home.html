@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block title %}
+  Home
+{% endblock %}
+{% block links %}
+{{ super() }}
+<link href="{{ url_for('static', filename='stylesheets/home.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<main>
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='xavier.jpg') }}" alt="">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>E-Learning.</h1>
+            <p>Learn online the fun way.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='headway.jpg') }}" alt="" >
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>E-Library.</h1>
+            <p>An online library where you can read books to heart's content</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='thomas.jpg') }}" alt="">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Online group discussions with friends and supervisors.</h1>
+            <p>Have the joy of learning online with friends and supervisors online in an interactive group discussion.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>E-Learning</h2>
+        <p>Learn online alone with solitude with the whole internet and it's resources all to yourself.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>E-Library</h2>
+        <p>Have fun reading books from Amazon and other Online book resources all to yourself.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>E-Schooling</h2>
+        <p>School at home, on vacations, weekends anywhere. It will be as if you were in class everyday.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Learn online with solitude. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">Have the solitude of learning alone on your laptop. You can receive information from friends online and even your tutors too.</p>
+      </div>
+      <div class="col-md-5">
+        <!--<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
+        <img src="{{ url_for('static', filename='j.jpg') }}" class="rounded" alt="" width="100%" height="100%">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">E-Learning made easy. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead"></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{{ url_for('static', filename='avel.jpg') }}" class="rounded" alt="" width="100%" height="100%">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Learn online in a group. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">And yes, this is our online library. Where you can read books, sci-fi's, novels, comics etc online and have fun. Group discussion are also allowed. That's the fun part</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{ url_for('static', filename='prisc.jpg') }}" class="rounded" alt="" width="100%" height="100%">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container --
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
+
+{% endblock %}

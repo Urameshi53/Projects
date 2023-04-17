@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}
+    Registration Page
+{% endblock %}
+{% block links %}
+{{ super() }}
+<link href="{{ url_for('static', filename='stylesheets/register.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section id="register">
+    <div id="form">
+        <form method="POST" class="form-register">
+            {{ form.hidden_tag() }}
+    
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="Username")}}
+            <br>
+    
+            {{ form.f_name.label() }}
+            {{ form.f_name(class="form-control", placeholder="First Name")}}
+            <br>
+    
+            {{ form.s_name.label() }}
+            {{ form.s_name(class="form-control", placeholder="Last Name")}}
+            <br>
+    
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email address")}}
+            <br>
+    
+            {{ form.student_id.label() }}
+            {{ form.student_id(class="form-control", placeholder="Student ID")}}
+            <br>
+    
+            {{ form.index_no.label() }}
+            {{ form.index_no(class="form-control", placeholder="Index Number")}}
+            <br>
+    
+            {{ form.course.label() }}
+            {{ form.course(class="form-control", placeholder="Programme")}}
+            <br>
+    
+            {{ form.contact.label() }}
+            {{ form.contact(class="form-control", placeholder="Phone Number")}}
+            <br>
+    
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="")}}
+            <br>
+            
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="")}}
+    
+            <div id="form-rest">
+                <div class="checkbox mb-3">
+                    <h6>Already have an account?</h6>
+                    <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+                 </div>
+        
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            </div>
+    
+            
+        </form>
+    </div>
+</section>
+{% endblock %}

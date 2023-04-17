@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Posts{% endblock %}
+
+{% block header %}
+  <h1>Posts</h1>
+  <br>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.create') }}">New</a>
+  {% endif %}
+{% endblock %}
+
+{% block links %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="posts">
+
+  {% for post in posts %}
+    <article class="post">
+      <div class="card" style="width: 20rem;">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+        <div class="card-body">
+          <a href="#">
+            <h5 class="card-title">
+              {{ post['title'] }}
+            </h5>
+          </a>
+          <p class="card-text">{{ post['body'][:60] }}...</p>
+        </div>
+        <div>
+          <div class="about" style="padding: 0 0 10px 15px;">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+          {% if g.user['id'] == post['author_id'] %}
+          <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+          {% endif %}
+        </div>
+      </div>
+
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+</section>
+
+<section id="comments">
+  <br>
+  <h1>Add a comment</h1>
+    <form method="post">
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">{{ request.form['body'] }}</textarea>
+        <label for="floatingTextarea2">Comments</label>
+        <input type="submit" value="Submit">
+      </div>    
+    </form>
+    <br>
+  {% for comment in comments %}
+  <article class="post">
+  <header>
+    <div>
+      <h1>{{ comment['username'] }}</h1>
+      <div class="about">by {{ comment['username'] }} on {{ comment['created'].strftime('%Y-%m-%d') }}</div>
+    </div>
+      {% if g.user['id'] %}
+          <a class="action" href="{{ url_for('blog.update', id=comment['id']) }}">Comment</a>
+  {% endif %}
+  </header>
+  <p class="comment-body">{{ comment['body'] }}</p>
+  </article>
+
+  {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+</section>
+<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
